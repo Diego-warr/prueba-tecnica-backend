@@ -29,10 +29,10 @@ public class SwaggerConfig {
     private ApiInfo getApiInfo() {
         return new ApiInfo(
                 "Prueba técnica API",
-                "API para la prueba técnica para el puesto de developer fullstack",
+                "Documentacion de la API para el puesto de developer fullstack",
                 "1.0.0",
                 "https://drodriguez.com.pe",
-                new Contact("Diego Rodriguez", "https://codmind.com", "mark.sergen@gmail.com.pe"),
+                new Contact("Diego Rodriguez", "https://drodriguez.com.pe", "mark.sergen@gmail.com.pe"),
                 "LICENSE",
                 "LICENSE URL",
                 Collections.emptyList()
