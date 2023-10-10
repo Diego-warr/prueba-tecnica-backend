@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.certicom.project</groupId>
+    <artifactId>PruebaTecnica</artifactId>
+    <version>1.0.0</version>
+    <name>PruebaTecnica</name>
+    <description>PruebaTecnica</description>
+    <packaging>pom</packaging>
+    <properties>
+        <java.version>11</java.version>
+        <lombok.version>1.18.24</lombok.version>
+        <snakeyaml.version>2.0</snakeyaml.version>
+        <spring-boot.version>2.7.16</spring-boot.version>
+        <springdoc-openapi-ui.version>1.6.15</springdoc-openapi-ui.version>
+        <mysql-driver.version>8.1.0</mysql-driver.version>
+        <commons-io.version>2.13.0</commons-io.version>
+        <commons-text.version>1.10.0</commons-text.version>
+        <commons-lang3.version>3.13.0</commons-lang3.version>
+        <modelmapper.version>3.1.1</modelmapper.version>
+        <slf4j.version>1.7.36</slf4j.version> <!-- same version of spring boot 2.7.14 -->
+        <logback.version>1.2.12</logback.version> <!-- same version of spring boot 2.7.14 -->
+        <jakson.version>2.13.5</jakson.version> <!-- same version of spring boot 2.7.14 -->
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
+        <maven-war-plugin.version>3.3.2</maven-war-plugin.version>
+        <maven-site-plugin.version>3.12.1</maven-site-plugin.version>
+        <maven-project-info-reports-plugin.version>3.4.5</maven-project-info-reports-plugin.version>
+        <maven-javadoc-plugin.version>3.5.0</maven-javadoc-plugin.version>
+        <maven-jxr-plugin.version>2.3</maven-jxr-plugin.version>
+        <maven-antrun-plugin.version>3.1.0</maven-antrun-plugin.version>
+        <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
+    <modules>
+        <module>entities</module>
+        <module>api-rest</module>
+        <module>repository</module>
+        <module>service</module>
+    </modules>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <version>${spring-boot.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>${spring-boot.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>certicom-api</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
